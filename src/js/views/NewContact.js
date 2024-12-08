@@ -22,8 +22,8 @@ const NewContact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    actions.addContact(contactData); 
-    navigate("/"); 
+    actions.addContact(contactData);
+    navigate("/");
   };
 
   return (
@@ -35,7 +35,7 @@ const NewContact = () => {
             Full Name
           </label>
           <input
-          id="FullName"
+            id="FullName"
             className="form-control"
             placeholder="Full Name"
             name="name"
@@ -48,7 +48,7 @@ const NewContact = () => {
             Email
           </label>
           <input
-          id="Email"
+            id="Email"
             type="email"
             className="form-control"
             placeholder="Enter Email"
@@ -62,7 +62,7 @@ const NewContact = () => {
             Phone
           </label>
           <input
-          id="Phone"
+            id="Phone"
             type="tel"
             className="form-control"
             placeholder="Enter Phone"
@@ -76,7 +76,7 @@ const NewContact = () => {
             Address
           </label>
           <input
-          id="Address"
+            id="Address"
             className="form-control"
             placeholder="Enter Address"
             name="address"

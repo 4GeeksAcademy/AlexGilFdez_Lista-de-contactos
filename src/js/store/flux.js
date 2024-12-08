@@ -22,13 +22,13 @@ const getState = ({ getStore, getActions, setStore }) => {
                     .then((response) => response.json())
                     .then((data) => {
                         console.log("Datos recibidos:", data);
-                        setStore({ contacts: data.contacts }); 
+                        setStore({ contacts: data.contacts });
                     })
                     .catch((error) => {
                         console.error("Error al cargar los datos:", error);
                     });
             },
-           
+
             deleteContact: (id) => {
                 const store = getStore();
                 fetch(`https://playground.4geeks.com/contact/agendas/alexgilfdez/contacts/${id}`, {
@@ -48,7 +48,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                     });
             },
             updateContact: (id, updatedData) => {
-                console.log("Actualizando contacto con ID:", id, updatedData); 
+                console.log("Actualizando contacto con ID:", id, updatedData);
                 fetch(`https://playground.4geeks.com/contact/agendas/alexgilfdez/contacts/${id}`, {
                     method: "PUT",
                     headers: {
@@ -96,7 +96,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                         console.error("Error al crear el contacto:", error);
                     });
             },
-            
+
 
         },
     };
