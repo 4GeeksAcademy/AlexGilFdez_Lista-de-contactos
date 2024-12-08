@@ -4,7 +4,7 @@ import React, { useState, useEffect, useContext } from 'react'
 import { Context } from "../store/appContext";
 
 const EditContact = () => {
-  const { idContacto } = useParams(); // Este es el parámetro de la URL
+  const { idContacto } = useParams();
   const { store, actions } = useContext(Context);
   const navigate = useNavigate();
   
@@ -33,17 +33,18 @@ const EditContact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    actions.updateContact(idContacto, contactData); // Llamar a la acción de actualización
-    navigate("/"); // Redirigir al home
+    actions.updateContact(idContacto, contactData);
+    navigate("/"); 
   };
 
   return (
     <div className="m-5">
-      <h1 className="text-center">Edit Contact {idContacto}</h1> {/* Usar idContacto directamente */}
+      <h1 className="text-center">Edit Contact {idContacto}</h1> 
       <form className="m-5" onSubmit={handleSubmit}>
         <div className="form-group mb-4">
           <label htmlFor="FullName" className="mb-2">Full Name</label>
           <input
+          id='FullName'
             className='form-control'
             placeholder='Full Name'
             name="name"
@@ -52,8 +53,9 @@ const EditContact = () => {
           />
         </div>
         <div className="form-group mb-4">
-          <label htmlFor="Email" className="mb-2">Email</label>
+          <label htmlFor="email" className="mb-2">Email</label>
           <input
+          id='email'
             type="email"
             className='form-control'
             placeholder='Enter Email'
@@ -65,6 +67,7 @@ const EditContact = () => {
         <div className="form-group mb-4">
           <label htmlFor="Phone" className="mb-2">Phone</label>
           <input
+          id='Phone'
             type='tel'
             className='form-control'
             placeholder='Enter Phone'
@@ -76,6 +79,7 @@ const EditContact = () => {
         <div className="form-group mb-4">
           <label htmlFor="Address" className="mb-2">Address</label>
           <input
+          id='Address'
             className='form-control'
             placeholder='Enter Address'
             name="address"
