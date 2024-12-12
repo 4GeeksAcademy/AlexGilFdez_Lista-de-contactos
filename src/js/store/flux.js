@@ -16,7 +16,27 @@ const getState = ({ getStore, getActions, setStore }) => {
             contacts: [],
         },
         actions: {
-
+            createAgenda: () => {
+                const agendaName = "alexgilfdez";
+                fetch("https://playground.4geeks.com/contact/agendas/alexgilfdez", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ agenda_slug: agendaName }),
+                })
+                .then((response) => {
+                    if (response.ok) {
+                        console.log(`Agenda ${agendaName} creada exitosamente.`);
+                    } else {
+                        console.error(`Error al crear la agenda: ${response.status} - ${response.statusText}`);
+                    }
+                })
+                .catch((error) => {
+                    console.error("Error al intentar crear la agenda:", error);
+                });
+            },
+                  
             loadSomeData: () => {
                 fetch("https://playground.4geeks.com/contact/agendas/alexgilfdez/contacts")
                     .then((response) => response.json())
